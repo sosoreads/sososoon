@@ -167,7 +167,7 @@
 						var $email = $('#signup-form').find('input[name="email"]').val();
 						console.log( $email  );
 						$.ajax({
-						    url: "https://formspree.io/sosolittlereads@isdev.net", 
+						    url: "https://formspree.io/sosolittlereads@iimono.org", 
 								method: "POST",
 								data: {message: $email},
 								dataType: "json"
