@@ -1,8 +1,3 @@
-/*
-	Eventually by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function() {
 
@@ -110,7 +105,7 @@
 			// Vars.
 				var $form = document.querySelectorAll('#signup-form')[0],
 					$submit = document.querySelectorAll('#signup-form input[type="submit"]')[0],
-					$email = document.querySelectorAll('#signup-form input[type="email"]')[0],
+					//$email = document.querySelectorAll('#signup-form input[type="email"]')[0],
 					$message;
 
 			// Bail if addEventListener isn't supported.
@@ -168,11 +163,13 @@
 								//$message._show('failure', 'Something went wrong. Please try again.');
 
 						}, 750);
-
+						
+						var $email = $('#signup-form').find('input[name="email"]').val();
+						console.log( $email  );
 						$.ajax({
 						    url: "https://formspree.io/sosolittlereads@isdev.net", 
 								method: "POST",
-								data: {message: "hello"},
+								data: {message: $email},
 								dataType: "json"
 						});
 
