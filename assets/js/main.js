@@ -148,8 +148,15 @@
 						$submit.disabled = true;
 
 					// Process form.
-					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
-					// but there's enough here to piece together a working AJAX submission call that does.
+						var $email = $('#signup-form').find('input[name="email"]').val();
+						//console.log( $email  );
+						$.ajax({
+						    url: "https://formspree.io/sosolittlereads@iimono.org", 
+								method: "POST",
+								data: {message: $email},
+								dataType: "json"
+						});
+
 						window.setTimeout(function() {
 
 							// Reset form.
@@ -164,14 +171,6 @@
 
 						}, 750);
 						
-						var $email = $('#signup-form').find('input[name="email"]').val();
-						console.log( $email  );
-						$.ajax({
-						    url: "https://formspree.io/sosolittlereads@iimono.org", 
-								method: "POST",
-								data: {message: $email},
-								dataType: "json"
-						});
 
 					});
 
